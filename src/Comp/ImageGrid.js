@@ -18,8 +18,8 @@ const ImageGrid = ({setSelectedImg}) => {
                     whileHover={{ opacity: 1}}
                     key={doc.id} onClick={() => setSelectedImg(doc.url)}>
                         <motion.img className='imgw' 
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
+                        initial={{ opacity: 0, scale: 0}}
+                        animate={{ opacity: 1, scale: 1}}
                         transition={{ delay: 1 }}
 
                         alt='img' src={doc.url} />
