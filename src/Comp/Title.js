@@ -1,11 +1,10 @@
-
+import img1 from '../img/logo.png'
 
 const Title = () => {
     return (
-        <div>
-            <h1>Title</h1>
-            <p>Your images will come here</p>
-        </div>
+    <>
+        <img className='logoImg' src={img1} alt='Clippg' />
+    </>  
     )
 }
 
