@@ -1,4 +1,5 @@
 import useFirestore from "../hooks/useFirestore"
+import { motion } from 'framer-motion'
 
 const ImageGrid = ({setSelectedImg}) => {
 
@@ -12,9 +13,17 @@ const ImageGrid = ({setSelectedImg}) => {
         <div className="container-fluid">
             <div className="row">
                 {docs && docs.map(doc => (
-                    <div className='col-sm-12 col-md-4 noMargin' key={doc.id} onClick={() => setSelectedImg(doc.url)}>
-                        <img className='imgw' alt='img' src={doc.url} />
-                    </div>
+                    <motion.div className='col-sm-12 col-md-4 noMargin' 
+                    layout
+                    whileHover={{ opacity: 1}}
+                    key={doc.id} onClick={() => setSelectedImg(doc.url)}>
+                        <motion.img className='imgw' 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 1 }}
+
+                        alt='img' src={doc.url} />
+                    </motion.div>
                 ))}
             </div>
         </div>
