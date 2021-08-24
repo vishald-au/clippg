@@ -13,7 +13,7 @@ const ImageGrid = ({setSelectedImg}) => {
         <div className="container-fluid">
             <div className="row">
                 {docs && docs.map(doc => (
-                    <motion.div className='col-sm-12 col-md-4 noMargin' 
+                    <motion.div className='col-4 noMargin' 
                     layout
                     whileHover={{ opacity: 1 }}
                     key={doc.id} onClick={() => setSelectedImg(doc.url)}>
